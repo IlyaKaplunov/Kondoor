@@ -1,0 +1,77 @@
+.values {
+    padding: 80px 0;
+
+    @include mobile {
+        padding: 40px 0;
+    }
+    
+    &__title {
+        margin-bottom: 80px;
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+
+        @include notebook {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        text-align: center;
+
+        @include tablet {
+            @include flex-v-center;
+            text-align: initial;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 10px;
+
+        @include tablet {
+            margin-bottom: 0;
+        } 
+
+        svg {
+            width: 50px;
+            height: 50px;
+            fill: transparent;
+            stroke-width: 2px;
+            stroke: #000;
+
+            @include mobile {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27px;
+        color: #131010;   
+
+        @include tablet {
+            margin-left: 20px;
+        }     
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 19px;
+        }     
+    }
+}
+

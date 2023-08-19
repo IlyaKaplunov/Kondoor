@@ -1,0 +1,163 @@
+.works {
+    padding: 80px 0;
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__head {
+        @include flex-all-sb;
+        margin-bottom: 26px;
+    }
+
+    &__title {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+    
+    &__box {
+        position: relative;
+    }
+
+    &__switch {
+        border-radius: 50%;
+        width: 41px;    
+        height: 41px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        transition: all 0.3s;
+        background-color: #fff;
+        
+        @include mobile {
+            width: 32px;
+            height: 32px;
+        }
+
+        svg {
+            width: 17px;
+            height: 41px;
+
+            @include mobile {
+                width: 14px;
+                height: 10px;
+            }
+        }
+
+        &--prev {
+            left: -60px;
+
+            @include mobile {
+                left: -22px;
+            }
+        }
+
+        &--next {
+            right: -60px;
+
+            @include mobile {
+                right: -22px;
+            }
+        }
+    }
+
+    &__slide {
+        display: grid;
+        gap: 20px;
+
+        &--1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--2 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        @include notebook {
+            gap: 10px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+
+        &--long {
+            grid-column: 2 span;
+        }
+
+        &--high {
+            grid-row: 2 span;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#13101066, 0.4);
+            z-index: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            .works__increase {
+                opacity: 1;
+            }
+
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__img {
+        img {
+            max-width: 100%;
+            transition: all 0.5s ease-in-out 0s;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 19px;
+        left: 31px;
+        z-index: 2;
+        font-size: 24px;
+        color: #FFFCF4;
+        line-height: 32.68px;
+        text-transform: uppercase;
+        z-index: 3;
+
+        @include notebook {
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 19px;
+            left: 17px;
+            bottom: 10px;
+        }
+    }
+
+    &__increase {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: all 0.3s;
+        z-index: 2;
+        max-width: 100%;
+    }
+}
+

@@ -1,0 +1,113 @@
+.ecology {
+    background-color: #201A1A;
+    padding: 80px 0;
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__inner {
+        max-width: 861px;
+        margin: 0 auto;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:nth-child(2) {
+            flex-direction: row-reverse;
+
+            .ecology__desc {
+                text-align: right;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 33px;
+
+            @include mobile {
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__desc {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 33px;
+        color: #fff;
+        text-transform: uppercase;
+        max-width: 357px;
+
+        @include tablet {
+            font-size: 18px;
+            max-width: 300px;
+        }
+
+        @include mobile {
+            font-size: 15px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 475px) {
+            font-size: 11px;
+            line-height: 14px;
+        }
+
+        span {
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    &__circles {
+        display: flex;
+    }
+
+    &__circle {
+        position: relative;
+
+        img {
+            max-width: 100%;
+        }
+
+        &:not(:last-child) {
+            margin-right: 80px;
+
+            @include notebook {
+                margin-right: 40px;
+            }
+
+            @include mobile {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 28px;
+        color: #fff;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        left: 50%;
+        z-index: 1;
+
+        @include mobile {
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        @media (max-width: 475px) {
+            font-size: 11px;
+            line-height: 14px;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.wardrobe {
+    padding: 80px 0;
+    background-color: #201A1A;
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 105px;
+
+        @include minidesk {
+            gap: 50px;
+        }
+
+        @include notebook {
+            gap: 30px;
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    &__img {
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
